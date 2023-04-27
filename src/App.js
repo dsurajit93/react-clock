@@ -2,6 +2,7 @@
 // import ListDisplay from './components/ListDisplay'
 // import Users from './components/Users'
 
+import Calculator from "./components/Calculator"
 import Clock from "./components/Clock"
 import EventEx from "./components/EventEx"
 import StyleCodes from "./components/StyleCodes"
@@ -22,7 +23,9 @@ function App(){
       {/* <Users /> */}
       {/* <StyleCodes /> */}
       {/* <EventEx myfunc={appFunc} /> */}
-      <WorldClock />
+      {/* <WorldClock /> */}
+
+      <Calculator />
     </>
   )
 }

@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 
-const Clock = ({country, tz}) => {
-    const [time, setTime] = useState(new Date().toLocaleTimeString("en-US", {timeZone: tz}))
-    const [date, setDate] =useState(new Date().toLocaleDateString("en-US", {timeZone: tz}))
+const Clock = ({tz}) => {
+    const [time, setTime] = useState(new Date().toLocaleTimeString("en-US", {timeZone: tz.timezone}))
+    const [date, setDate] =useState(new Date().toLocaleDateString("en-US", {timeZone: tz.timezone}))
     const [color, setColor] = useState("#05aff7");
 
     setInterval(() => {
-        setTime(new Date().toLocaleTimeString("en-US", {timeZone: tz}))
-        setDate(new Date().toLocaleDateString("en-US", {timeZone: tz}))
+        setTime(new Date().toLocaleTimeString("en-US", {timeZone: tz.timezone}))
+        setDate(new Date().toLocaleDateString("en-US", {timeZone: tz.timezone}))
         let t = time.split(':')[0]
         let ampm = time.slice(-2)
         // console.log(t, ampm)
@@ -19,7 +19,7 @@ const Clock = ({country, tz}) => {
   return (
     <div className='card' style={{backgroundColor : color}}>
         <div className='card-body text-center text-light'>
-            <b>{country}</b>
+            <b>{tz.country}</b>
             <h2>{time}</h2>
             <p>{date}</p>
         </div>
